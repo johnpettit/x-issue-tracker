@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>ISSUES BABAY!</title>
 </head>
 <body>
-
+<div class="container">
+    <div th:if="${not #lists.isEmpty(issues) }">
+        <h3>Issue List</h3>
+        <table class="table-lines">
+            <tr>
+                <td>Id</td>
+                <td>Title</td>
+                <td>Date Created</td>
+            </tr>
+            <tr th:each="issue : ${issues}">
+                <td th:text="${issue.id}"></td>
+                <td th:text="${issue.title}"></td>
+                <td th:text="${issue.createDate}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
 </body>
 </html>
