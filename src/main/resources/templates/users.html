@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>USERS BABAY!</title>
+</head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(users) }">
+        <h3>User List</h3>
+        <table class="table-lines">
+            <tr>
+                <td>Id</td>
+                <td>FirstName</td>
+                <td>LastName</td>
+                <td>Email</td>
+                <td>Date Created</td>
+            </tr>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}"></td>
+                <td th:text="${user.firstName}"></td>
+                <td th:text="${user.lastName}"></td>
+                <td th:text="${user.email}"></td>
+                <td th:text="${user.createDate}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

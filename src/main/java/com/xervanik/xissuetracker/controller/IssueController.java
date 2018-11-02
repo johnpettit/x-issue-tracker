@@ -1,5 +1,7 @@
 package com.xervanik.xissuetracker.controller;
 
+import com.xervanik.xissuetracker.repositories.IssueRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,12 +15,16 @@ import com.xervanik.xissuetracker.dao.Issue;
 @Controller
 public class IssueController {
 
+    private IssueRepository issueRepo;
+
+    @Autowired
+    public IssueController(IssueRepository issueRepo) {
+        this.issueRepo = issueRepo;
+    }
+
     @RequestMapping("/issues")
-    public String getIssues(Model model, HttpServletRequest request) {
-        ApplicationContext appContext = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
-        EntityManagerFactory emf = appContext.getBean(EntityManagerFactory.class);
-        EntityManager em = emf.createEntityManager();
-        model.addAttribute("issues", em.createQuery("from Issue", Issue.class).getResultList());
+    public String getIssues(Model model) {
+        model.addAttribute("issues", issueRepo.findAll());
         return "issues";
     }
 }
