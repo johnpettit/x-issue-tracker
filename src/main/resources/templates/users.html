@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/css/xervanik.css" type="text/css">
 </head>
 <body>
+<div th:insert="~{nav :: navbar}"></div>
 <div class="container">
     <div th:if="${not #lists.isEmpty(users) }">
         <h3>User List</h3>
