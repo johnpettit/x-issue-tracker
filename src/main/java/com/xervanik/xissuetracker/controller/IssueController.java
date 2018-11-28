@@ -26,6 +26,7 @@ public class IssueController {
     @RequestMapping("/issues")
     public String getIssues(Model model) {
         model.addAttribute("issues", issueService.getAll());
+
         return "issues";
     }
 }
