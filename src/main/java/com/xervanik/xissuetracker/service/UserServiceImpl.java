@@ -23,4 +23,24 @@ public class UserServiceImpl implements UserService {
         userRepo.findAll().forEach(users::add);
         return users;
     }
+
+    @Override
+    public User getById(Integer id) {
+        return userRepo.queryById(id);
+    }
+
+    @Override
+    public User addNew(User user) {
+        return userRepo.save(user);
+    }
+
+    @Override
+    public User edit(User user) {
+        return userRepo.save(user);
+    }
+
+    @Override
+    public void delete(User user) {
+        userRepo.delete(user);
+    }
 }
