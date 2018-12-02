@@ -8,10 +8,11 @@
 <body>
 <div th:insert="~{nav :: navbar}"></div>
 <div class="container">
-    <form action="#" th:action="@{/addissue}" th:object="${issue}" method="post">
+    <form action="#" th:action="@{/newissue}" th:object="${issue}" method="post">
         <p>Title: <input type="text" th:field="*{title}" /></p>
         <p>Description: <input type="text" th:field="*{description}" /></p>
         <p>Create Date: <input type="text" th:field="*{createDate}" /></p>
+        <p><input type="submit" value="Create Issue" /></p>
     </form>
 </div>
 <div th:insert="~{footer :: copy}"></div>
