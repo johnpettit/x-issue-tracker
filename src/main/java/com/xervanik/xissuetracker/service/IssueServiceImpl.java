@@ -22,4 +22,24 @@ public class IssueServiceImpl implements IssueService {
         issueRepo.findAll().forEach(issues::add);
         return issues;
     }
+
+    @Override
+    public Issue getById(Integer id) {
+        return issueRepo.queryById(id);
+    }
+
+    @Override
+    public Issue addNew(Issue issue) {
+        return issueRepo.save(issue);
+    }
+
+    @Override
+    public Issue edit(Issue issue) {
+        return issueRepo.save(issue);
+    }
+
+    @Override
+    public void delete(Issue issue) {
+        issueRepo.delete(issue);
+    }
 }
