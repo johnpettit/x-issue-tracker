@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New User</title>
+    <link rel="stylesheet" href="/css/xervanik.css" type="text/css">
+</head>
+<body>
+<div th:insert="~{nav :: navbar}"></div>
+<div class="container">
+    <form action="#" th:action="@{/newuser}" th:object="${user}" method="post">
+        <p>First Name: <input type="text" th:field="*{firstName}" /></p>
+        <p>Last Name: <input type="text" th:field="*{lastName}" /></p>
+        <p>Email: <input type="text" th:field="*{email}" /></p>
+        <p>Password: <input type="text" th:field="*{password}" /></p>
+        <p>Create Date: <input type="text" th:field="*{createDate}" /></p>
+        <p><input type="submit" value="Create User" /></p>
+    </form>
+</div>
+<div th:insert="~{footer :: copy}"></div>
+</body>
+</html>
