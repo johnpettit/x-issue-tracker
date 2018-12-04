@@ -45,6 +45,7 @@ public class Boots implements ApplicationListener<ContextRefreshedEvent> {
         user.setFirstName("John");
         user.setLastName("Pettit");
         user.setEmail("john.pettit@cox.net");
+        user.setPassword("chuck111");
         user.setCreateDate(new Date());
 
         userRepo.save(user);

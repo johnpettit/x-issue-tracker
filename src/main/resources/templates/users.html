@@ -22,7 +22,7 @@
                 <td th:text="${user.id}"></td>
                 <td th:text="${user.firstName}"></td>
                 <td th:text="${user.lastName}"></td>
-                <td th:text="${user.email}"></td>
+                <td><a th:href="@{/edituser/{id}(id=${user.id})}"><span th:text="${user.email}">EDIT</span></a></td>
                 <td th:text="${user.createDate}"></td>
             </tr>
         </table>
