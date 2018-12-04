@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Issue</title>
+    <link rel="stylesheet" href="/css/xervanik.css" type="text/css">
+</head>
+<body>
+<div th:insert="~{nav :: navbar}"></div>
+<div class="container">
+    <form action="#" th:action="@{/editissue}" th:object="${issue}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <p>Title: <input type="text" th:field="*{title}" /></p>
+        <p>Description: <input type="text" th:field="*{description}" /></p>
+        <p>Create Date: <input type="text" th:field="*{createDate}" /></p>
+        <p><input type="submit" value="Edit Issue" /></p>
+    </form>
+</div>
+<div th:insert="~{footer :: copy}"></div>
+</body>
+</html>

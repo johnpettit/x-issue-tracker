@@ -27,6 +27,7 @@ public class Boots implements ApplicationListener<ContextRefreshedEvent> {
         Issue issue1 = new Issue();
         issue1.setId(1);
         issue1.setTitle("TEST1");
+        issue1.setDescription("BLAHBLAHBLAH1");
         issue1.setCreateDate(new Date());
 
         issueRepo.save(issue1);
@@ -34,6 +35,7 @@ public class Boots implements ApplicationListener<ContextRefreshedEvent> {
         Issue issue2 = new Issue();
         issue2.setId(2);
         issue2.setTitle("TEST2");
+        issue2.setDescription("BLAHBLAHBLAH2");
         issue2.setCreateDate(new Date());
 
         issueRepo.save(issue2);
