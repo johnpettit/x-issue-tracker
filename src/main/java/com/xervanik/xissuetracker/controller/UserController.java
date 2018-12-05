@@ -62,4 +62,14 @@ public class UserController {
 
         return "users";
     }
+
+    @RequestMapping(value="/deleteuser/{id}", method= RequestMethod.GET)
+    public String deleteUser(@PathVariable (value="id") Integer id, Model model) {
+        User user = userService.getById(id);
+        userService.delete(user);
+        List<User> users = userService.getAll();
+        model.addAttribute("users", users);
+
+        return "users";
+    }
 }

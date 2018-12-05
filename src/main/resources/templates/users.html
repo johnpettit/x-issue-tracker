@@ -24,6 +24,7 @@
                 <td th:text="${user.lastName}"></td>
                 <td><a th:href="@{/edituser/{id}(id=${user.id})}"><span th:text="${user.email}">EDIT</span></a></td>
                 <td th:text="${user.createDate}"></td>
+                <td><a th:href="@{/deleteuser/{id}(id=${user.id})}">DELETE</a></td>
             </tr>
         </table>
     </div>

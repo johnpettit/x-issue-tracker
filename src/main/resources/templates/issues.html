@@ -20,6 +20,7 @@
                 <td th:text="${issue.id}"></td>
                 <td><a th:href="@{/editissue/{id}(id=${issue.id})}"><span th:text="${issue.title}">EDIT</span></a></td>
                 <td th:text="${issue.createDate}"></td>
+                <td><a th:href="@{/deleteissue/{id}(id=${issue.id})}">DELETE</a></td>
             </tr>
         </table>
     </div>

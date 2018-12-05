@@ -60,4 +60,14 @@ public class IssueController {
 
         return "issues";
     }
+
+    @RequestMapping(value="/deleteissue/{id}", method= RequestMethod.GET)
+    public String deleteIssue(@PathVariable(value="id") Integer id, Model model) {
+        Issue issue = issueService.getById(id);
+        issueService.delete(issue);
+        List<Issue> issues = issueService.getAll();
+        model.addAttribute("issues", issues);
+
+        return "issues";
+    }
 }
