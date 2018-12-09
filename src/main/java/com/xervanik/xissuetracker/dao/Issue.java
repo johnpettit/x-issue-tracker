@@ -1,10 +1,13 @@
 package com.xervanik.xissuetracker.dao;
 
+import org.slf4j.LoggerFactory;
 import javax.persistence.*;
 import java.util.Date;
+import org.slf4j.Logger;
 
 @Entity
 public class Issue {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
